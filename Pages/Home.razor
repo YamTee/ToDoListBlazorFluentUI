@@ -1,7 +1,40 @@
 ﻿@page "/"
 
 <PageTitle>Home</PageTitle>
+<FluentStack VerticalAlignment="VerticalAlignment.Center"
+             HorizontalAlignment="HorizontalAlignment.Center">
 
-<h1>Hello, world!</h1>
+@*     <FluentGrid Justify="JustifyContent.Center">
 
-Welcome to your new app.
+        <FluentGridItem xs="12" sm="6"> *@
+
+            <FluentCard Class="col-sm-12 col-md-8 col-xl-6">
+
+                <FluentGrid>
+
+                    <FluentGridItem xs="12" sm="12">
+                        <h2>Start adding your todo!</h2>
+                    </FluentGridItem>
+
+                    <FluentGrid Justify="JustifyContent.Center">
+                        <FluentGridItem xs="6" sm="6">
+                            <FluentTextField style="width: 100%;"></FluentTextField>
+                        </FluentGridItem>
+
+                        <FluentGridItem>
+                            <FluentButton Appearance="@Appearance.Accent">Click Me</FluentButton>
+                        </FluentGridItem>
+                    </FluentGrid>
+
+                </FluentGrid>
+
+            </FluentCard>
+@* 
+        </FluentGridItem>
+
+    </FluentGrid> *@
+</FluentStack>
+
+
+
+
