@@ -3,9 +3,20 @@
 <FluentDesignSystemProvider @ref="designRef">
 
     <FluentHeader>ToDo List</FluentHeader>
+
     @Body
 
-    <FluentFooter>Bye</FluentFooter>
+    <FluentFooter>
+
+        <div class="d-flex justify-content-between ms-4 me-4">
+
+            <span class="mt-auto mb-auto">Powered by .Net 8</span>
+
+            <span class="mt-auto mb-auto">YamTee Inc. All Rights Reserved.</span>
+
+        </div>
+
+    </FluentFooter>
 
     <FluentToastProvider />
     <FluentDialogProvider />
@@ -14,37 +25,37 @@
 
 </FluentDesignSystemProvider>
 
-@code{
+@code {
     [Inject]
     private BodyFont BodyFont { get; set; } = default!;
 
-	[Inject]
-	private BaseLayerLuminance BaseLayerLuminance { get; set; } = default!;
+    [Inject]
+    private BaseLayerLuminance BaseLayerLuminance { get; set; } = default!;
 
-	private FluentDesignSystemProvider? designRef;
+    private FluentDesignSystemProvider? designRef;
 
-	protected override async Task OnAfterRenderAsync(bool firstRender)
-	{
-		if (firstRender)
-		{
-			// //Set to dark mode
-			// await BaseLayerLuminance.SetValueFor(designRef!.Element, (float)0.15);
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            // //Set to dark mode
+            // await BaseLayerLuminance.SetValueFor(designRef!.Element, (float)0.15);
 
-			//Set to Excel color
-			//await AccentBaseColor.SetValueFor(ref2!.Element, "#185ABD".ToSwatch());
+            //Set to Excel color
+            //await AccentBaseColor.SetValueFor(ref2!.Element, "#185ABD".ToSwatch());
 
-			//Set the font
-			await BodyFont.SetValueFor(designRef!.Element, "Inter");
+            //Set the font
+            await BodyFont.SetValueFor(designRef!.Element, "Inter");
 
-			//Set 'border' width for ref4
-			//await StrokeWidth.SetValueFor(ref4!.Element, 7);
-			//And change conrner radius as well
-			//await ControlCornerRadius.SetValueFor(ref4!.Element, 15);
+            //Set 'border' width for ref4
+            //await StrokeWidth.SetValueFor(ref4!.Element, 7);
+            //And change conrner radius as well
+            //await ControlCornerRadius.SetValueFor(ref4!.Element, 15);
 
-			// If you would like to change the BaseLayerLuminance  value for the whole site, you can use the WithDefault method
-			await BaseLayerLuminance.WithDefault((float)1);
+            // If you would like to change the BaseLayerLuminance  value for the whole site, you can use the WithDefault method
+            await BaseLayerLuminance.WithDefault((float)0.15);
 
-			StateHasChanged();
-		}
-	}
+            StateHasChanged();
+        }
+    }
 }
