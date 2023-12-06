@@ -69,7 +69,7 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-OaEVSjCjC6cD6VuRk8T0z2K2lSFFCvhZkFh2i3ClH80=",
+      "hash": "sha256-Rlgem8PfXBBqistmEoOCfkA+Rq7qs8uuZNyrq8sNIiM=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -77,7 +77,7 @@
       "url": "_framework\/Microsoft.AspNetCore.Components.Forms.wasm"
     },
     {
-      "hash": "sha256-cw57D+v8hjAtyTOcMEtR+yXpTD+z0d3U8FPIAWUATOg=",
+      "hash": "sha256-3qWLtN0JL4Bvb3ARY5GC74zKIYz34\/ZKZTwQt2RKR8o=",
       "url": "_framework\/Microsoft.AspNetCore.Components.wasm"
     },
     {
@@ -133,7 +133,7 @@
       "url": "_framework\/Microsoft.FluentUI.AspNetCore.Components.Icons.wasm"
     },
     {
-      "hash": "sha256-reer2joFIsR\/G0YS6ZnWEzhSQcOKz2pskYcRuIibgLQ=",
+      "hash": "sha256-4ZfLQiJ7kFftyDZsZ7upnde8H8uHOmX8LYo\/J3vPFD8=",
       "url": "_framework\/Microsoft.FluentUI.AspNetCore.Components.wasm"
     },
     {
@@ -177,7 +177,7 @@
       "url": "_framework\/System.ComponentModel.wasm"
     },
     {
-      "hash": "sha256-PhTBmigb5x2J+pUmRluiRaTfeS7xjmHhSg4xtmVQdTQ=",
+      "hash": "sha256-prcAEsJJXHULEsBDmyAteANd+jPToYH8MtsJaHGQPMI=",
       "url": "_framework\/System.Console.wasm"
     },
     {
@@ -225,7 +225,7 @@
       "url": "_framework\/System.ObjectModel.wasm"
     },
     {
-      "hash": "sha256-Xc8ZbygW1bJdlcLb\/RwsHRMLpvMTef0ymnmBE04Efok=",
+      "hash": "sha256-bnlNlQvkDg7cifix3Gs\/vz26oI4hGATxhLeS5JoSg\/Q=",
       "url": "_framework\/System.Private.CoreLib.wasm"
     },
     {
@@ -273,7 +273,7 @@
       "url": "_framework\/System.Runtime.Serialization.Primitives.wasm"
     },
     {
-      "hash": "sha256-a7rnSTwHne+w7wRajvqkGiQUqy\/t9LUipIgI+kzNqek=",
+      "hash": "sha256-JkTQoC3DhPzsh8e9EWzAF\/f+eeMenDbhpjMTUg5sMQI=",
       "url": "_framework\/System.Runtime.wasm"
     },
     {
@@ -317,7 +317,7 @@
       "url": "_framework\/System.Xml.XDocument.wasm"
     },
     {
-      "hash": "sha256-yL1zqY1UYvHNVgxSvEvNNkDGTPMfDa\/tBNYd27vpSGM=",
+      "hash": "sha256-YYFgdCOu+iHlYJNrhfKdY2y7EsJmpLH4j9bILFfX8aQ=",
       "url": "_framework\/ToDoListBlazorFluentUI.wasm"
     },
     {
@@ -405,5 +405,5 @@
       "url": "_content\/Microsoft.FluentUI.AspNetCore.Components\/Microsoft.FluentUI.AspNetCore.Components.lib.module.js"
     }
   ],
-  "version": "+0pKu114"
+  "version": "KLYqBpY2"
 };
