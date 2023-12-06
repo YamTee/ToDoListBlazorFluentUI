@@ -36,6 +36,9 @@ public class LocalStorageService(IJSRuntime jsRuntime) : IAsyncDisposable, ILoca
         await WaitForReference();
         var value = await _accessorJsRef.Value.InvokeAsync<string>("get", key);
 
+        if(value is null)
+            return default;
+
         var result = JsonConvert.DeserializeObject<T>(value);
 
         return result;
