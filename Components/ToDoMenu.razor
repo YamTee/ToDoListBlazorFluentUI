@@ -1,0 +1,29 @@
+﻿@inject ILocalStorageService _localStorageService;
+@inject ILogger<ToDoMenu> _logger;
+@inject ToDoListState _toDoState;
+
+@using ToDoListBlazorFluentUI.Pages;
+
+<FluentButton id="@ItemId.ToString()"
+              Appearance="@Appearance.Stealth"
+              OnClick="@ShowMenu">
+    ...
+</FluentButton>
+
+<FluentMenu @bind-Open="_display" HorizontalPosition="HorizontalPosition.Start" Anchor="@ItemId.ToString()">
+    <FluentMenuItem OnClick="@(() => ChangeProgress(ToDoProgress.Pending))">
+        Pending
+    </FluentMenuItem>
+    <FluentMenuItem OnClick="@(() => ChangeProgress(ToDoProgress.InProgress))">
+        In Progress
+    </FluentMenuItem>
+    <FluentMenuItem OnClick="@(() => ChangeProgress(ToDoProgress.Completed))">
+        Complete
+    </FluentMenuItem>
+    <FluentMenuItem OnClick="@(DeleteToDoItem)">
+        Delete
+    </FluentMenuItem>
+</FluentMenu>
+
+
+

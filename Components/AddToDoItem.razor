@@ -1,0 +1,50 @@
+﻿@inject ILocalStorageService _localStorage;
+@inject ILogger<AddToDoItem> _logger;
+@inject ToDoListState _todoState;
+
+<FluentCard Class="col-sm-12 col-md-8 col-xl-6">
+
+    <FluentGrid>
+
+        <FluentGridItem xs="12" sm="12">
+            <h2>Start adding your todo!</h2>
+        </FluentGridItem>
+
+        <FluentGrid Justify="JustifyContent.Center">
+
+            <FluentGridItem xs="12" sm="6">
+
+                <FluentStack Orientation="Orientation.Vertical">
+
+                    <FluentStack Orientation="Orientation.Horizontal">
+                        @* Text Field *@
+                        <FluentTextField @bind-Value=_toDoTitle
+                                         Placeholder="Add your item....."
+                                         style="width: 100%;"
+                                         @onfocusin="@HideErrorMessage"
+                                         @onfocusout="@HideErrorMessage">
+                        </FluentTextField>
+
+
+                        @* Add Button *@
+                        <FluentButton IconStart="@(new Icons.Regular.Size16.Add())"
+                                      Appearance="@Appearance.Stealth"
+                                      OnClick="AddItem">
+                            Add
+                        </FluentButton>
+                    </FluentStack>
+
+                    @if (_showError)
+                    {
+                        <div class="text-danger">Please enter any text!</div>
+                    }
+
+                </FluentStack>
+
+            </FluentGridItem>
+
+        </FluentGrid>
+
+    </FluentGrid>
+
+</FluentCard>

@@ -1,6 +1,6 @@
 ﻿@page "/"
-@using ToDoListBlazorFluentUI.Services
 @inject ILocalStorageService _localStorageService;
+@inject ILogger<Home> _logger;
 
 <PageTitle>Todo List</PageTitle>
 
@@ -8,125 +8,13 @@
              VerticalAlignment="VerticalAlignment.Center"
              HorizontalAlignment="HorizontalAlignment.Center">
 
-    <FluentCard Class="col-sm-12 col-md-8 col-xl-6">
+    @* Add Todo Component *@
 
-        <FluentGrid>
+    <AddToDoItem></AddToDoItem>
 
-            <FluentGridItem xs="12" sm="12">
-                <h2>Start adding your todo!</h2>
-            </FluentGridItem>
+    <ListToDoItem></ListToDoItem>
 
-            <FluentGrid Justify="JustifyContent.Center">
-
-                <FluentGridItem xs="6" sm="6">
-
-                    <FluentTextField @bind-Value="todoTitle"
-                                     Placeholder="Add your item....." style="width: 100%;">
-                    </FluentTextField>
-
-                </FluentGridItem>
-
-                <FluentGridItem>
-                    <FluentButton IconStart="@(new Icons.Regular.Size16.Add())"
-                                  Appearance="@Appearance.Stealth"
-                                  OnClick="AddItem">
-                        Add
-                    </FluentButton>
-                </FluentGridItem>
-
-            </FluentGrid>
-
-        </FluentGrid>
-
-    </FluentCard>
-
-    <FluentCard Class="col-sm-12 col-md-8 col-xl-6">
-
-        <h2>Todos!</h2>
-
-        <FluentStack Orientation="Orientation.Vertical"
-                     VerticalAlignment="VerticalAlignment.Center"
-                     HorizontalAlignment="HorizontalAlignment.Center">
-
-            @if (list is { Count: > 0 })
-            {
-                foreach (var item in list)
-                {
-                    <FluentCard Class="col-sm-12 col-md-8 p-2">
-                        <div class="d-flex justify-content-between">
-                            <span>@item.Title</span>
-                            <span class="text-end">@item.Progress.ToString()</span>
-                        </div>
-                    </FluentCard>
-
-                }
-            }
-            else
-            {
-                <div>
-                    <span>No items available</span>
-                </div>
-            }
-
-        </FluentStack>
-
-
-    </FluentCard>
 </FluentStack>
 
 @code {
-    public enum ToDoProgress
-    {
-        Pending,
-        InProgress,
-        Completed
     }
-
-    public class ToDoItem
-    {
-        public Guid Id { get; set; }
-        public string? Title { get; set; }
-        public ToDoProgress Progress { get; set; }
-            = ToDoProgress.Pending;
-    }
-
-    private List<ToDoItem> list = new();
-
-    private string ToDoListItemsKey = "todoListItems";
-
-    private string? todoTitle;
-
-    protected override async void OnInitialized()
-    {
-
-        list = await _localStorageService
-                .GetValueAsync<List<ToDoItem>>(ToDoListItemsKey)
-                ?? new();
-
-        StateHasChanged();
-    }
-
-    private async Task AddItem()
-    {
-        var todoItem = new ToDoItem
-            {
-                Id = new Guid(),
-                Title = todoTitle
-            };
-
-        list.Add(todoItem);
-
-        Console.WriteLine(list);
-
-        await _localStorageService
-            .SetValueAsync<List<ToDoItem>>(ToDoListItemsKey, list);
-
-        todoTitle = null;
-
-        StateHasChanged();
-    }
-}
-
-
-
-

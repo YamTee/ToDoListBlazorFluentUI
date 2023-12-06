@@ -1,0 +1,54 @@
+﻿@inject ILocalStorageService _localStorage;
+@inject ILogger<AddToDoItem> _logger;
+@inject ToDoListState _todoState;
+@inject IDialogService _modal;
+
+<FluentCard Class="col-sm-12 col-md-8 col-xl-6">
+
+    <h2>Your Todos!</h2>
+
+    <FluentStack Orientation="Orientation.Vertical"
+                 VerticalAlignment="VerticalAlignment.Center"
+                 HorizontalAlignment="HorizontalAlignment.Center">
+
+        @if (_todoState.ToDoItems is { Count: > 0 })
+        {
+            foreach (var item in _todoState.ToDoItems)
+            {
+                <FluentCard Class="col-sm-12 col-md-8 p-2">
+
+                    <div class="d-flex justify-content-between">
+
+                        @if (item.Progress == ToDoProgress.Completed)
+                        {
+                            <span><del>@item.Title</del></span>
+                        }
+                        else
+                        {
+                            <span>@item.Title</span>
+                        }
+
+                        <span class="@item.Progress.GetColorClass()">@item.Progress.GetValue()</span>
+
+                        <FluentButton id="@item.Id.ToString()"
+                                      Appearance="@Appearance.Stealth"
+                                      OnClick="@(() => ShowModal(@item.Id))">
+                            ...
+                        </FluentButton>
+
+                    </div>
+
+                </FluentCard>
+            }
+        }
+        else
+        {
+            <div>
+                <span>No items available</span>
+            </div>
+        }
+
+    </FluentStack>
+
+
+</FluentCard>

@@ -1,0 +1,35 @@
+﻿@implements IDialogContentComponent<ToDoItem>
+@inject ToDoListState _toDoState;
+@inject ILocalStorageService _localStorage;
+
+@* Header *@
+<FluentDialogHeader ShowDismiss="true">
+    <FluentStack VerticalAlignment="VerticalAlignment.Center">
+        @* <FluentIcon Value="@(new Icons.Regular.Size24.WindowApps())" /> *@
+        <FluentLabel Typo="Typography.PaneHeader">
+            Update ToDo
+        </FluentLabel>
+    </FluentStack>
+</FluentDialogHeader>
+
+@* Footer *@
+<FluentDialogFooter>
+    <FluentButton Appearance="Appearance.Accent" OnClick="@UpdateAsync">Save</FluentButton>
+    <FluentButton Appearance="Appearance.Neutral" OnClick="@DeleteAsync">Delete</FluentButton>
+    <FluentButton Appearance="Appearance.Stealth" OnClick="@CloseAsync">Close</FluentButton>
+</FluentDialogFooter>
+
+@* Body *@
+<FluentDialogBody>
+
+    <FluentTextField @bind-Value="@_title">Title:</FluentTextField>
+
+    <FluentSelect Label="Select a progress"
+                  Items="@_selectItems"
+                  OptionValue="@(x => x.Value)"
+                  OptionText="@(x => x.Text)"
+                  OptionSelected="@(x => x.Selected)"
+                  @bind-Value="@_selectedValue">
+    </FluentSelect>
+</FluentDialogBody>
+
