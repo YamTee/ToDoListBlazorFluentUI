@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "ToDoListBlazorFluentUI",
   "resources": {
-    "hash": "sha256-zcM4bJFJF17HUQj5KD8BGTTwmBn27bG6+jFhYkQA9Bo=",
+    "hash": "sha256-kJw6VX8Ef5ypNHby9TuPnVfWwA9wMDTUjOnkJJmeTs0=",
     "jsModuleNative": {
       "dotnet.native.8.0.0.45ykigla5r.js": "sha256-LjLDIz9+J7uuiwMlQ4HbNx2BnSpphOtO2MwkoI28vdI="
     },
@@ -78,7 +78,7 @@
       "System.Xml.Linq.wasm": "sha256-GWFwZbLHxhganNs3G9GJMiuMxZ+GJwv4j+F7g493lik=",
       "System.Xml.ReaderWriter.wasm": "sha256-g1Goo8IX6Jp0HdsCauXdtvjiwgQhLHaAeWWIO6vzXGc=",
       "System.Xml.XDocument.wasm": "sha256-QPoy5Zoqgsgoj+gZ5cLjOr+n0kLIGIGBwmJl9jHuZ/Y=",
-      "ToDoListBlazorFluentUI.wasm": "sha256-YYFgdCOu+iHlYJNrhfKdY2y7EsJmpLH4j9bILFfX8aQ="
+      "ToDoListBlazorFluentUI.wasm": "sha256-jypLzDCqiBrWU9rKULkwkAd5q2EARN4JJ9R0Rl8BvLo="
     },
     "libraryInitializers": {
       "_content/Microsoft.FluentUI.AspNetCore.Components/Microsoft.FluentUI.AspNetCore.Components.lib.module.js": "sha256-oecrLlAXsUUJWgLW8ER0tM/GPt3iASWTzS77BHma2mc="
